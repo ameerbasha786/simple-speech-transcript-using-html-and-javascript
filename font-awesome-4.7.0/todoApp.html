@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo-App</title>
+</head>
+
+<body>
+    <div style="background:#bca59f">
+        <div style="margin-top:150px;align-content: center;text-align: center">
+            <p><strong>Name</strong></p>
+            <input id="inputtext" />
+            <button id="butt">save</button>
+        </div>
+    </div>
+    
+
+</body>
+<script>
+    let count = 0;
+    var inputtext = document.getElementById("inputtext");
+    inputtext.setAttribute("type", "text");
+    inputtext.setAttribute("placeholder", "addusers");
+    inputtext.setAttribute("style", "text-align:center;border-radius:13px;padding:10px");
+
+    var savebutton = document.getElementById("butt");
+    savebutton.setAttribute("onclick", "pushuser()");
+
+    var datatable = document.createElement("table");
+    datatable.setAttribute("id", "tabledata");
+    datatable.setAttribute("style", "border:1px solid black");
+    document.body.appendChild(datatable);
+
+
+    var rowdata = document.createElement("tr");
+    rowdata.setAttribute("id", "rows");
+    document.getElementById("tabledata").appendChild(rowdata);
+
+    var datahead = document.createElement("th");
+    datahead.innerText = "sno";
+    rowdata.append(datahead);
+    var datahed2 = document.createElement("th");
+    datahed2.innerText = "name";
+    document.getElementById("rows").append(datahed2);
+
+    function pushuser() {
+        if (!inputtext.value || inputtext.value.length == 0) {
+            var error = document.createElement("p");
+            error.setAttribute("id", "err");
+            error.setAttribute("style", "text-align:center;color:red");
+            error.innerText = "give valid data";
+            alert(error.innerText);
+        } else {
+           
+            showdata(inputtext.value, count++);
+            inputtext.value = "";
+           
+        }
+
+    }
+
+    function showdata(userdata, count) {
+        console.log(userdata, count);
+        
+        var rowes = document.createElement("tr").cloneNode(false);
+      
+        var datalist = document.createElement("td");
+        datalist.innerText = count;
+        var datalist1 = document.createElement("td");
+        datalist1.innerText = userdata;
+        rowes.append(datalist, datalist1);
+        datatable.appendChild(rowes);
+    }
+
+
+
+
+</script>
+
+</html>

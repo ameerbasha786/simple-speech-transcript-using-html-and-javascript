@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src='./server.js'></script>
+    <style>
+        .maindiv {
+
+            text-align: center;
+
+        }
+
+        ul{
+            border-radius:5px;
+            background-color: #c4c7ce ;
+            width: 500px;
+            margin:auto;
+            margin-top: 10px;
+            border:1px solid black
+        }
+
+        .div1 {
+            border-radius: 20px;
+            text-align: center;
+            border-left: 5px solid #c4c7ce;
+            border-right: 5px solid #9498a1;
+            border-top: 5px solid #9498a1;
+            border-bottom: 5px solid #c4c7ce;
+            width: 500px;
+            position: relative;
+            left: 400px;
+            
+        }
+
+        body {
+            background-color: slategray
+        }
+
+        button {
+            border-radius: 50px;
+            outline: none;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #c4c7ce
+        }
+
+        span {
+            color: #9498a1
+        }
+        li{
+            font-family:cursive;
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="maindiv">
+        <h1>speech-recognition</h1>
+        <div class="div1">
+            <h1>start-<span>Speech</span></h1>
+            <button onclick="start(window)"><i class="fa fa-microphone fa-2x" aria-hidden="true"></i><br>start</button>
+            <span id="span">0.00</span><input type="range" min=1 max=30 id="heloo"></input><span id="span1">0.60</span>
+            <button onclick="stop(window)"><i class="fa fa-stop-circle fa-2x" aria-hidden="true"></i><br>stop</button>
+
+        </div>
+
+        <div>
+            <ul>
+                <li id="mylist"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
